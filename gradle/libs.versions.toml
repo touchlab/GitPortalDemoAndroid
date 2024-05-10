@@ -1,0 +1,58 @@
+[versions]
+## SDK Versions
+minSdk = "21"
+targetSdk = "34"
+compileSdk = "34"
+
+# Dependencies
+kotlin = "1.9.23"
+android-gradle-plugin = "8.1.0"
+coroutines = "1.8.0"
+kotlinx-datetime = "0.5.0"
+
+compose = "1.6.7"
+composeCompiler = "1.5.13"
+
+# Sample - Android
+androidx-core = "1.13.1"
+androidx-lifecycle = "2.7.0"
+androidx-activity-compose = "1.9.0"
+android-desugaring = "2.0.4"
+koin = "3.5.3"
+
+[libraries]
+compose-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "composeCompiler" }
+
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+
+kotlinx-dateTime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+
+# Sample - Android
+androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+
+compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+compose-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
+compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
+compose-activity = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity-compose" }
+
+android-desugaring = { module = "com.android.tools:desugar_jdk_libs", version.ref = "android-desugaring" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+
+[bundles]
+app-ui = [
+    "compose-compiler",
+    "androidx-core",
+    "androidx-lifecycle-runtime",
+    "androidx-lifecycle-viewmodel",
+    "androidx-lifecycle-compose",
+    "compose-ui",
+    "compose-tooling",
+    "compose-foundation",
+    "compose-material",
+    "compose-activity"
+]
+
