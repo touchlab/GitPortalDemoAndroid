@@ -12,8 +12,8 @@ jobs:
         with:
           fetch-depth: '0'
 
-      - name: Hello world action step
-        id: hello
+      - name: GitPortal Check
+        id: gp-check
         uses: touchlab/gp-check@main
         with:
           kmpModule: library
