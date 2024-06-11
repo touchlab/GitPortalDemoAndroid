@@ -3,7 +3,7 @@ on:
   pull_request:
 
 jobs:
-  hello_world_job:
+  gitportal_check_job:
     runs-on: ubuntu-latest
     name: Check library for KMP Changes
     steps:
@@ -16,5 +16,4 @@ jobs:
         id: gp-check
         uses: touchlab/gp-check@main
         with:
-          kmpModule: library
           sshPrivateKey: ${{ secrets.GITPORTAL_SSH_KEY }}
