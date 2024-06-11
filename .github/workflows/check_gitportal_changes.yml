@@ -5,6 +5,8 @@ on:
 jobs:
   gitportal_check_job:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     name: Check library for KMP Changes
     steps:
       - name: Checkout code
@@ -17,3 +19,7 @@ jobs:
         uses: touchlab/gp-check@main
         with:
           sshPrivateKey: ${{ secrets.GITPORTAL_SSH_KEY }}
+
+      - name: 'Git Push'
+        run: |
+          git push origin
