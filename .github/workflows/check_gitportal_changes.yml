@@ -20,6 +20,7 @@ jobs:
         uses: touchlab/gp-check@main
         with:
           sshPrivateKey: ${{ secrets.GITPORTAL_SSH_KEY }}
+          pullBranch: 'main'
 
       - name: 'Git Push'
         continue-on-error: true
