@@ -6,6 +6,9 @@ on:
 jobs:
   gitportal_check_job:
     runs-on: ubuntu-latest
+    concurrency:
+      group: gitportal
+      cancel-in-progress: false
     permissions:
       contents: write
     name: Check library for KMP Changes
