@@ -1,19 +1,8 @@
 [versions]
-## SDK Versions
-minSdk = "21"
-targetSdk = "34"
-compileSdk = "34"
-
-# Dependencies
 kotlin = "2.0.0"
-android-gradle-plugin = "8.1.0"
-coroutines = "1.8.1"
-kotlinx-datetime = "0.6.0"
 
 compose = "1.6.8"
-composeCompiler = "1.5.14"
 
-# Sample - Android
 androidx-core = "1.13.1"
 androidx-lifecycle = "2.7.0"
 androidx-activity-compose = "1.9.0"
@@ -21,13 +10,6 @@ android-desugaring = "2.0.4"
 koin = "3.5.3"
 
 [libraries]
-compose-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "composeCompiler" }
-
-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
-
-kotlinx-dateTime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
-
-# Sample - Android
 androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
 androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
@@ -42,9 +24,11 @@ compose-activity = { module = "androidx.activity:activity-compose", version.ref 
 android-desugaring = { module = "com.android.tools:desugar_jdk_libs", version.ref = "android-desugaring" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 
+[plugins]
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
 [bundles]
 app-ui = [
-    "compose-compiler",
     "androidx-core",
     "androidx-lifecycle-runtime",
     "androidx-lifecycle-viewmodel",
@@ -55,4 +39,3 @@ app-ui = [
     "compose-material",
     "compose-activity"
 ]
-

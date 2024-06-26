@@ -1,15 +1,16 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
     namespace = "co.touchlab.kampkit.android"
-    compileSdk = libs.versions.compileSdk.get().toInt()
+    compileSdk = kmpLibs.versions.compileSdk.get().toInt()
     defaultConfig {
         applicationId = "co.touchlab.kampkit"
-        minSdk = libs.versions.minSdk.get().toInt()
-        targetSdk = libs.versions.targetSdk.get().toInt()
+        minSdk = kmpLibs.versions.minSdk.get().toInt()
+        targetSdk = kmpLibs.versions.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -34,9 +35,6 @@ android {
         compose = true
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
-    }
     packaging {
         resources.excludes.add("META-INF/**/previous-compilation-data.bin")
     }
@@ -50,6 +48,7 @@ val GROUP:String by project
 val LIBRARY_VERSION:String by project
 
 dependencies {
+    // Uncomment these
 //    implementation(project(":analytics"))
 //    implementation(project(":breeds"))
     implementation(libs.bundles.app.ui)
